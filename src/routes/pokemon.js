@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const PokemonController = require("../controllers/pokemon");
 router
+.get("/", PokemonController.getPokemon)
 .post("/", PokemonController.addPokemon)
-// .patch("/", BarangController.editBarang)
-// .delete("/:kode", BarangController.deleteBarang)
+.delete("/:pokeId", PokemonController.deletePokemon)
+.delete("/", PokemonController.deleteAllPokemon)
 
 module.exports = router;
